@@ -1,0 +1,36 @@
+repositories {
+  mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'groovy'
+
+dependencies {
+  testCompile 'junit:junit:4.12'
+}
+
+sourceSets {
+  main {
+    java {
+      srcDir 'src/numbers'
+      srcDir 'src/examples'
+    }
+  }
+  test {
+    java {
+      srcDir 'test/numbers'
+    }
+  }
+}
+
+test {
+  testLogging {
+    events "passed", "failed", "standardOut"
+  }
+}
+
+task execute(type:JavaExec) {
+  main = mainClass
+  classpath = sourceSets.main.runtimeClasspath
+}
