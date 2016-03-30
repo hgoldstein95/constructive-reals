@@ -21,3 +21,10 @@ documentation.
 ## Usage
 The documentation (found at `build/docs/javadoc/`) will be very helpful for
 getting started, but there are also examples in `src/examples/`.
+
+## Disclaimer
+While I have done my absolute best to ensure that my code is correct, I make no
+guarantees that it is free of bugs. Please do not hold me responsible for any
+mistakes that I may have made. Also, some of the functions that I have made
+available (especially cosine, arctan, and exponential) produce real numbers
+that are not particularly performant. Keep this in mind when using them.
