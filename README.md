@@ -8,8 +8,9 @@ The motivation to work on this implementation came from an assignment done in
 CS 3110 at Cornell University, with professor Robert Constable.
 
 ## Building
-This project uses [gradle](http://gradle.org/) as a build system. If gradle is
-installed globally, then the project can be built by running:
+This project uses [gradle](http://gradle.org/) as a build system, and runs on
+Java 8. If gradle is installed globally, then the project can be built by 
+running:
 ```
 gradle build
 ```
