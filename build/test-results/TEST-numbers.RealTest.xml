@@ -1,15 +1,15 @@
-<?xml version="1.1" encoding="UTF-8"?>
-<testsuite name="numbers.RealTest" tests="9" failures="0" errors="0" timestamp="2016-03-29T20:41:09" hostname="minty" time="2.033">
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="numbers.RealTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2016-04-07T15:54:23" hostname="minty" time="2.063">
   <properties/>
-  <testcase name="testAdd" classname="numbers.RealTest" time="0.083"/>
-  <testcase name="testCos" classname="numbers.RealTest" time="1.009"/>
-  <testcase name="testExp" classname="numbers.RealTest" time="0.305"/>
-  <testcase name="testSqrt" classname="numbers.RealTest" time="0.217"/>
-  <testcase name="testArctan" classname="numbers.RealTest" time="0.329"/>
+  <testcase name="testAdd" classname="numbers.RealTest" time="0.054"/>
+  <testcase name="testCos" classname="numbers.RealTest" time="1.181"/>
+  <testcase name="testExp" classname="numbers.RealTest" time="0.292"/>
+  <testcase name="testSqrt" classname="numbers.RealTest" time="0.194"/>
+  <testcase name="testArctan" classname="numbers.RealTest" time="0.284"/>
   <testcase name="testCreate" classname="numbers.RealTest" time="0.006"/>
-  <testcase name="testMultiply" classname="numbers.RealTest" time="0.024"/>
-  <testcase name="testInverse" classname="numbers.RealTest" time="0.044"/>
-  <testcase name="testNegate" classname="numbers.RealTest" time="0.013"/>
+  <testcase name="testMultiply" classname="numbers.RealTest" time="0.02"/>
+  <testcase name="testInverse" classname="numbers.RealTest" time="0.022"/>
+  <testcase name="testNegate" classname="numbers.RealTest" time="0.009"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

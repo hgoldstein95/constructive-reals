@@ -98,27 +98,39 @@ public class Real {
   }
 
   /**
+   * Helper method for computing bounds for inverse function.
+   *
+   * @return bounds for inversion
+   */
+  public BigInteger inverseBound() {
+    BigInteger aux = BigInteger.ZERO;
+
+    Rational xn;
+    boolean test;
+
+    do {
+      aux = aux.add(BigInteger.ONE);
+      xn = val.apply(aux);
+      test = xn.den().abs().compareTo(xn.num().multiply(aux).abs()) < 0;
+    } while(!test);
+
+    return aux;
+  }
+
+  /**
    * Negation for real numbers.
    *
    * @return 1 / this
    */
   public Real inverse() {
-    Rational n = Rational.ONE;
-    while(val.apply(n.ceil()).compareTo(n.inverse().get()) <= 0) {
-      n = n.add(Rational.ONE);
-    }
+    BigInteger b = this.inverseBound();
+    BigInteger b2 = b.multiply(b);
+    BigInteger b3 = b2.multiply(b);
 
-    Rational two = Rational.ONE.add(Rational.ONE);
-    Rational N =
-      two.divide(val.apply(n.ceil()).subtract(n.inverse().get())).get();
-
-
-    BigInteger Ncubed = N.multiply(N.multiply(N)).ceil();
-    BigInteger nNsquared = n.multiply(N.multiply(N)).ceil();
-    return new Real(i ->
-                    (i.compareTo(N.ceil()) < 0) ?
-                    val.apply(Ncubed).inverse().get() :
-                    val.apply(nNsquared).inverse().get());
+    return new Real(n ->
+                    n.compareTo(b) < 0
+                    ? val.apply(b3).inverse().get()
+                    : val.apply(b2.multiply(n)).inverse().get());
   }
 
   /**

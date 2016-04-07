@@ -1,10 +1,17 @@
+plugins {
+    id "org.gradle.java"
+    id "com.scuilion.syntastic" version "0.3.6"
+}
+
 repositories {
   mavenCentral()
 }
 
 apply plugin: 'java'
-apply plugin: 'application'
 apply plugin: 'groovy'
+apply plugin: 'application'
+
+mainClassName = 'examples.Example3'
 
 dependencies {
   testCompile 'junit:junit:4.12'
@@ -28,9 +35,4 @@ test {
   testLogging {
     events "passed", "failed", "standardOut"
   }
-}
-
-task execute(type:JavaExec) {
-  main = mainClass
-  classpath = sourceSets.main.runtimeClasspath
 }

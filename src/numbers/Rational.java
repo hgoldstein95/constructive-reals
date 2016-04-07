@@ -10,7 +10,7 @@ import java.util.Optional;
  *
  * @author Harrison Goldstein
  */
-public class Rational implements Comparable {
+public class Rational implements Comparable<Rational> {
 
   private BigInteger num;
   private BigInteger den;
@@ -62,6 +62,24 @@ public class Rational implements Comparable {
     if(d == 0) return Optional.empty();
     return Optional.of(
              new Rational(BigInteger.valueOf(n), BigInteger.valueOf(d)));
+  }
+
+  /**
+   * Getter for numerator.
+   *
+   * @return numerator
+   */
+  public BigInteger num() {
+    return num;
+  }
+
+  /**
+   * Getter for denominator.
+   *
+   * @return denominator
+   */
+  public BigInteger den() {
+    return den;
   }
 
   /**
@@ -191,9 +209,7 @@ public class Rational implements Comparable {
   }
 
   @Override
-  public int compareTo(Object o) {
-    if(!(o instanceof Rational)) throw new IllegalArgumentException();
-    Rational other = (Rational)o;
+  public int compareTo(Rational other) {
     return (num.multiply(other.den)).compareTo(other.num.multiply(den));
   }
 
